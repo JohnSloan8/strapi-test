@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recordings",
+  "info": {
+    "singularName": "recording",
+    "pluralName": "recordings",
+    "displayName": "Recording"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "utterance": {
+      "allowedTypes": [
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "written_attempt": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::written-attempt.written-attempt",
+      "inversedBy": "recordings"
+    },
+    "created": {
+      "type": "datetime"
+    }
+  }
+}

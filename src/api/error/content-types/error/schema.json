@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "errors",
+  "info": {
+    "singularName": "error",
+    "pluralName": "errors",
+    "displayName": "Error",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fromx": {
+      "type": "integer"
+    },
+    "tox": {
+      "type": "integer"
+    },
+    "text": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "received": {
+      "type": "datetime"
+    },
+    "written_attempt": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::written-attempt.written-attempt",
+      "inversedBy": "errors"
+    }
+  }
+}

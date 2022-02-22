@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "written_attempts",
+  "info": {
+    "singularName": "written-attempt",
+    "pluralName": "written-attempts",
+    "displayName": "WrittenAttempt",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "created": {
+      "type": "datetime"
+    },
+    "sentence": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sentence.sentence",
+      "inversedBy": "written_attempts"
+    },
+    "errors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::error.error",
+      "mappedBy": "written_attempt"
+    },
+    "recordings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recording.recording",
+      "mappedBy": "written_attempt"
+    },
+    "listens": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::listen.listen",
+      "mappedBy": "written_attempt"
+    }
+  }
+}

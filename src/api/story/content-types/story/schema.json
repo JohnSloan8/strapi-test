@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stories",
+  "info": {
+    "singularName": "story",
+    "pluralName": "stories",
+    "displayName": "Story",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "start": {
+      "type": "datetime",
+      "required": true
+    },
+    "sentences": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sentence.sentence",
+      "mappedBy": "story"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "stories"
+    }
+  }
+}

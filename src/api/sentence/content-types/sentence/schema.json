@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sentences",
+  "info": {
+    "singularName": "sentence",
+    "pluralName": "sentences",
+    "displayName": "Sentence"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "story": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::story.story",
+      "inversedBy": "sentences"
+    },
+    "written_attempts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::written-attempt.written-attempt",
+      "mappedBy": "sentence"
+    }
+  }
+}
